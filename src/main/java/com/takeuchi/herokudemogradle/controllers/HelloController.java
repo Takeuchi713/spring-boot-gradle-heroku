@@ -1,4 +1,4 @@
-package com.takeuchi.herokudemogradle;
+package com.takeuchi.herokudemogradle.controllers;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
