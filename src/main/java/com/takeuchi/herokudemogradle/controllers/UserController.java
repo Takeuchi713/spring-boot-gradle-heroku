@@ -24,8 +24,9 @@ public class UserController {
 
 	@GetMapping("/users")
 	public ResponseEntity<List<MyUser>> getUsers() {
-		//userをINSERT
-		MyUser user = new MyUser(null, "takeuchi", "test@test.com", 18, 1);
+		//userがいなければINSERT
+		String email = "test@test.com";
+		MyUser user = repository.findByEmail(email).orElse(new MyUser(null, "takeuchi", "test@test.com", 18, 1));
 		repository.save(user);
 		
 		List<MyUser> users = repository.findAll();
